@@ -25,6 +25,7 @@ export default class IssueList extends Component {
     return (
       <div>
         { this.state.issues.map((issue, index) => {
+          {console.log(issue)}
           return (
             <Issue key={index} issue={issue} />
           )
