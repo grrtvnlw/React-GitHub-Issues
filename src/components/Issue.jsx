@@ -1,14 +1,20 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css'
+import '../App.css';
+import icon from './icon.svg'
+import { Container } from 'react-bootstrap'
 
 function Issue({issue}) {
 
-  const { html_url, title, body } = issue;
+  const { html_url, title, body, label } = issue;
 
   return (
-    <div>
-      <h3><a href={html_url} target="_blank">{title}</a></h3>
-      <p>{body}</p>
-    </div>
+    <Container className="border">
+      <ul>
+  <li><a href={html_url} target="_blank">{title}</a>{label}</li>
+      </ul>
+      {/* <p>{body}</p> */}
+    </Container>
   );
 }
 
