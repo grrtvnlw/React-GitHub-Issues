@@ -21,7 +21,7 @@ function Issue({issue}) {
           <img src={icon}></img>
         </div>
         <div className="main">
-          <a href={html_url} target="_blank">{title}</a> {labels.map(label => <span className="label" style={{backgroundColor: `#${label.color}`}}><a href={label.url} target="_blank">{label.name}</a></span>)}
+          <a href={html_url} target="_blank" className="issueTitle">{title}</a> {labels.map(label => <span className="label" style={{backgroundColor: `#${label.color}`}}><a href={label.url} target="_blank">{label.name}</a></span>)}
           <br />
           <span className="number">{`#${number} Opened ${moment(updated_at).fromNow()} hours ago by`} <a className="user" href={user.html_url}>{user.login}</a></span>
         </div>
