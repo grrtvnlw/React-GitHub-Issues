@@ -44,17 +44,6 @@ a:hover {
   text-decoration: none;
 }
 
-ul {
-  list-style-image: url('./components/icon.svg');
-  margin: 5px 0px 5px 0px;
-  padding-left: 25px;
-  width: 100%;
-}
-
-li {
-  width: 100%;
-}
-
 .border {
   border: 1px solid gray;
 }
@@ -85,7 +74,7 @@ li {
 }
 
 .main {
-  width: 90%;
+  width: 75%;
   margin: 0px;
   padding: 0px;
   display: inline-block;
@@ -98,9 +87,20 @@ li {
   text-align: right;
 }
 
-.commentLink,
-.commentLink:hover {
+.commentLink {
   text-decoration: none;
   color: black;
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.commentImg:hover {
+  color: blue;
+}
+
+.left {
+  width: 3%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  text-align: left;
 }
