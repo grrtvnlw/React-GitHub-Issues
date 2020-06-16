@@ -22,7 +22,7 @@ export default class IssueList extends Component {
   render() {
     return (
       <div>
-        { this.state.issues.map((issue, index) => <Issue key={index} issue={issue} />)}
+        { this.state.issues.map(issue => <Issue key={issue.id} issue={issue} />)}
       </div>
     )
   }
