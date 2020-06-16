@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import ReactMarkdown from "react-markdown/with-html";
+import 'bootstrap/dist/css/bootstrap.css'
+import '../App.css';
+import { Container } from 'react-bootstrap'
+import open from './open.svg'
+import moment from 'moment';
 
 export default class IssueDetail extends Component {
   constructor(props) {
@@ -27,11 +33,35 @@ export default class IssueDetail extends Component {
       return <span>Loading Issue...</span>
     }
 
-    const { title, number } = this.state.detail;
+    const { title, number, user, updated_at, comments, body } = this.state.detail;
 
+    moment().format()
+
+    console.log(this.state.detail)
     return (
       <div>
-        <h1>{ title } <span style={{ color: '#ccc'}}>#{ number }</span></h1>
+        <Container>
+          <div className="issueHeader">
+            <h1>{ title } <span style={{ color: '#999'}}>#{ number }</span></h1>
+            <div className="openIssue">
+              <span className="openIcon">
+                <img src={open}></img> Open
+              </span>
+              <span className="issueInfo">
+                <a href={ user.html_url } className="userName">{ user.login }</a> opened this issue {moment(updated_at).fromNow()} - { comments ? comments : comments } comments
+              </span>
+            </div>
+          </div>
+          <hr />
+          <div className="issueBody border">
+            <div className="bodyHeader">
+              <a href={ user.html_url } className="userName">{ user.login }</a> commented {moment(updated_at).fromNow()}
+            </div>
+            <div className="bodyMain">
+              <ReactMarkdown source={ body } escapeHtml={ false } />
+            </div>
+          </div>
+        </Container>
       </div>
     )
   }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Issue from './Issue';
-// import { Container } from 'react-bootstrap'
-// import closed from './closed.svg'
 import Header from './Header'
 
 export default class IssueList extends Component {
