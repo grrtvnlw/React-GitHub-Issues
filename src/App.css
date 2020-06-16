@@ -53,7 +53,6 @@ ul {
 
 li {
   width: 100%;
-  border: 1px solid green;
 }
 
 .border {
@@ -90,14 +89,12 @@ li {
   margin: 0px;
   padding: 0px;
   display: inline-block;
-  border: 1px solid red;
 }
 
 .comments {
   width: 10%;
   display: inline-block;
   float: right;
-  border: 1px solid blue;
   text-align: right;
 }
 
@@ -105,4 +102,5 @@ li {
 .commentLink:hover {
   text-decoration: none;
   color: black;
+  font-size: 12px;
 }
