@@ -15,13 +15,12 @@ function Issue({issue}) {
 
   return (
     <Container className="border">
-      {console.log(labels)}
       <div>
         <div className="left">
           <img src={icon}></img>
         </div>
         <div className="main">
-          <a href={html_url} target="_blank" className="issueTitle">{title}</a> {labels.map(label => <span className="label" style={{backgroundColor: `#${label.color}`}}><a href={label.url} target="_blank">{label.name}</a></span>)}
+          <a href={html_url} target="_blank" className="issueTitle">{title}</a> {labels.map(label => <span key={ label.id } className="label" style={{backgroundColor: `#${label.color}`}}><a href={label.url} target="_blank">{label.name}</a></span>)}
           <br />
           <span className="number">{`#${number} Opened ${moment(updated_at).fromNow()} hours ago by`} <a className="user" href={user.html_url}>{user.login}</a></span>
         </div>
