@@ -24,7 +24,7 @@ function Issue({issue}) {
           <span className="number">{`#${number} Opened ${moment(updated_at).fromNow()} hours ago by`} <a className="user" href={user.html_url}>{user.login}</a></span>
         </div>
         <div className="comments">
-          {comments ? <><a className="commentLink" href={comments_url}><img className="commentImg" src={commentImg}></img> {comments}</a></> : null}
+          {comments ? <a className="commentLink" href={comments_url}><img className="commentImg" src={commentImg}></img> {comments}</a> : null}
         </div>
       </div>
     </Container>
