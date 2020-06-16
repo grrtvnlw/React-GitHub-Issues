@@ -1,28 +1,23 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import IssueList from './components/IssueList';
-import { Container } from 'react-bootstrap'
-import closed from './components/closed.svg'
+import IssueDetail from './components/IssueDetail';
 
 function App() {
   return (
-    <div className="App">
-      <Container className="border">
-        <div className="header">
-          <div className="headerImg">
-            <img src={closed}></img>
-          </div>
-          <div className="headerContent">
-            <p className="open">490 Open</p>
-          </div>
-          <div className="headerContent">
-            <p className="closed">✔️ 5,415 Closed</p>
-          </div>
-        </div>
-      </Container>
-      <IssueList />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={ IssueList } />
+          <Route path="/issue/:issueNumber" component={ IssueDetail }/>
+          <Route>
+            <h1>Error! 404 - Not Found</h1>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
