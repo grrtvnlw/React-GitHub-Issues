@@ -113,14 +113,15 @@ a:hover {
 
 .closed {
   font-size: 18px;
+  margin-left: 20px;
 }
 
 .headerImg {
   width: 3%;
+  padding-left: 1px;
 }
 
-.headerContent {
-  width: 12%;
+.header span {
   height: 100%;
   display: flex;
   justify-content: flex-start;
