@@ -6,7 +6,6 @@ import commentImg from './comments.svg'
 import { Container } from 'react-bootstrap'
 import moment from 'moment';
 
-
 function Issue({issue}) {
 
   const { html_url, title, body, labels, number, updated_at, user, comments, comments_url } = issue;
