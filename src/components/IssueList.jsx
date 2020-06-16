@@ -9,28 +9,20 @@ export default class IssueList extends Component {
     }
   }
 
-  getIssue = () => {
-    fetch('https://api.github.com/repos/facebook/create-react-app/issues')
-    .then(res => res.json())
-    .then(data => {
-      this.setState({ issues: data });
-    })
-  }
-
   componentDidMount() {
-    this.getIssue()
+    fetch('https://api.github.com/repos/facebook/create-react-app/issues')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ 
+          issues: data ? data : [] 
+        })
+      })
   }
 
   render() {
     return (
       <div>
-        { this.state.issues.map((issue, index) => {
-          {console.log(issue)}
-          return (
-            <Issue key={index} issue={issue} />
-          )
-          })
-        }
+        { this.state.issues.map((issue, index) => <Issue key={index} issue={issue} />)}
       </div>
     )
   }
