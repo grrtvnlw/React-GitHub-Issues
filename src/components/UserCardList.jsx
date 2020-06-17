@@ -5,9 +5,9 @@ function UserCardList({ arrayOfUsers }) {
   console.log(arrayOfUsers)
   return (
     <div> 
-      { arrayOfUsers.map((user) => {
+      { arrayOfUsers.map((user, index) => {
         return (
-          <UserCard user={ user } />
+          <UserCard user={ user } key={ index } />
           )
         })
       }

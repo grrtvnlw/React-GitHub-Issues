@@ -5,6 +5,7 @@ import './App.css';
 import IssueList from './components/IssueList';
 import IssueDetail from './components/IssueDetail';
 import Users from './components/User'
+import UserDetail from './components/UserDetail'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={ IssueList } />
           <Route path="/issue/:issueNumber" component={ IssueDetail }/>
-          <Route path="/users" component={ Users }/>
+          <Route exact path="/users" component={ Users }/>
+          <Route path="/users/:userName" component={ UserDetail }/>
           <Route>
             <h1>Error! 404 - Not Found</h1>
           </Route>

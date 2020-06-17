@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Container, Card } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 export default function UserCard({ user }) {
   return (
