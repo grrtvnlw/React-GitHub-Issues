@@ -10,24 +10,19 @@ export default class User extends Component {
       userName: '',
       users: []
     }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    // console.log(e.target.value)
+  handleChange = (e) => {
     this.setState({
       userName: e.target.value
     })
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://api.github.com/users/${this.state.userName}`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
         this.setState({ 
           users: data ? [...this.state.users, data] : [],
           userName: ''

@@ -18,13 +18,15 @@ export default function UserCard({ user }) {
           {user.bio && <p><b>Bio:</b> { user.bio }</p>}
           {user.blog && <p><b>Blog:</b> <a href={ user.blog } target="_blank">{ user.blog }</a></p>}
           {user.twitter_username && <p><b>Twitter:</b> <a href={`https://www.twitter.com/${user.twitter_username}`} target="_blank">{ user.twitter_username }</a></p>}
-          {user.repos_url && <p><b>GitHub:</b> <a href={ user.html_url } target="_blank">{ user.html_url }</a>
-          <ul>
-            <li>Public Repos: { user.public_repos }</li>
-            <li>Following: { user.following }</li>
-            <li>Followers: { user.followers }</li>
-          </ul>
-          </p>}
+          {user.repos_url && 
+            <p>
+              <b>GitHub:</b> <a href={ user.html_url } target="_blank">{ user.html_url }</a>
+                <ul>
+                  <li>Public Repos: { user.public_repos }</li>
+                  <li>Following: { user.following }</li>
+                  <li>Followers: { user.followers }</li>
+                </ul>
+            </p>}
           {user.id && <p><b>User ID:</b> { user.id }</p>}
         </div>
       </div>
