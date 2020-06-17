@@ -211,3 +211,30 @@ a:hover {
   color: royalblue;
   font-weight: 100;
 }
+
+.box {
+  display: flex;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.boxData {
+  width: 100%;
+  margin-left: 10px;
+  height: 300px;
+  align-items: center;
+  overflow: scroll;
+}
+
+.boxData a {
+  font-weight: 100;
+  color: dodgerblue;
+}
+
+.boxData a:hover {
+  font-weight: 100;
+  color: dodgerblue;
+  text-decoration: underline;
+}
