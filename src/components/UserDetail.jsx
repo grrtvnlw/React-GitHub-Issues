@@ -9,6 +9,7 @@ export default class UserDetail extends Component {
 
     this.state = {
       users: {},
+      github: []
     }
   }
 
@@ -21,11 +22,20 @@ export default class UserDetail extends Component {
           users: data
         })
       })
+      fetch(`https://api.github.com/users/${userName}/repos`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ 
+          github: data
+        })
+      })
   }
 
   render() {
 
     const { avatar_url, name, login, email, company, location, bio, blog, twitter_username, repos_url, id, html_url, followers, following, public_repos } = this.state.users;
+
+    const { description } = this.state.github;
     
     return (
       <Container>
@@ -54,6 +64,23 @@ export default class UserDetail extends Component {
             {id && <p><b>User ID:</b> { id }</p>}
           </div>
         </div>
+        { this.state.github.map((repo) => {
+          {console.log(repo)}
+        return (
+          <div className="box">
+            <div className="boxData">
+              {repo.name && <h1>{ repo.name }</h1>}
+              {repo.url && <a href={ repo.url }>{ repo.url }</a>}
+              {repo.description && <p><b>Description:</b> { repo.description }</p>}
+              {repo.language && <p><b>Language:</b> { repo.language }</p>}
+              <p><b>Stars: </b>{ repo.stargazers_count }</p>
+              <p><b>Watchers: </b>{ repo.watchers_count }</p>
+              <p><b>Forks: </b>{ repo.forks_count }</p>
+            </div>
+          </div>
+          )
+        })
+      }
       </Container>
     )
   }
